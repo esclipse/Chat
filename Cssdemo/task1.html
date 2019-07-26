@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .root{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            flex-direction: column;   
+        }
+
+        .root button{
+            height: 2
+        }
+
+        .root h1{
+            position: relative;
+            transition-timing-function: linear;
+            transition-duration: 1s;
+            transition-property: all;
+        }
+
+        .root h1 i {
+            width: 0%;
+            background: blue;
+            display: block;
+            height: .5rem;
+            transition-timing-function: linear;
+            transition-duration: .5s;
+            transition-property: all;
+            position: absolute;
+            left:50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <h1>前端学院<i></i></h1>
+        <button>切换样式</button>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector('button').onclick = ()=>{
+        document.querySelector('i').style.width = "100%";
+        document.querySelector('i').style.left = 0;
+        document.querySelector('i').style.right = 0;
+        document.querySelector('h1').style.color = 'blue';
+        setTimeout(function(){
+            document.querySelector('i').style.left = '50%';
+            document.querySelector('i').style.width = 0;
+            document.querySelector('h1').style.color = '#000';
+        },500)
+    }
+</script>
